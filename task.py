@@ -9,6 +9,7 @@ by year, month, day, hour, minute and then the alphabetical order.
 
 class Task:
     def _init_(self, desc, date, time):
+        #Assigns parameters to the attributes
         self.description = desc
         self.date = date #MM/DD/YYYY
         self.time = time #HH:MM
