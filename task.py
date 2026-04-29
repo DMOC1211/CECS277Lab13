@@ -2,7 +2,8 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 4/29/26
 Group: 17
-Description:
+Description: Creates the task class, constructs attributes, methods and compares each task 
+by year, month, day, hour, minute and then the alphabetical order. 
 '''
 
 
