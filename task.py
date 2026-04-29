@@ -20,3 +20,20 @@ class Task:
     
     def __lt__(self,other):
         m1, d1, y1 = map(int, self.date.split)
+        h1, min1 = map(int, self.time.split(':'))
+
+        m2, d2, y2, = map(int, other.date.split('/'))
+        h2, min2 = map(int, other.time.split(':'))
+
+        if y1 != y2:
+            return y1 < y2
+        if m1 != m2:
+            return m1 < m2 
+        if d1 != d2:
+            return d1 < d2 
+        if h1 != h2:
+            return h1 < h2
+        if min1 != min2:
+            return min1 < min2
+        
+        return self.description < other.description
