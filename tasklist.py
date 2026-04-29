@@ -16,7 +16,7 @@ class Tasklist:
         self.n = 0 
 
         try:
-            with open(tasklist, "r") as file:
+            with open(filename, "r") as file:
                 for line in file:
                     line = line.strip()
                     if line:
@@ -42,7 +42,7 @@ class Tasklist:
         return self.tasklist.pop(0)
     
     def save_file(self):
-        with open(self.tasklist, 'w') as file:
+        with open(self.filename, 'w') as file:
             for task in self.tasklist:
                 file.write(repr(task)+ '\n')
 
