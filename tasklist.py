@@ -2,14 +2,20 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 4/29/26
 Group: 17
-Description: Creates the tasklist class, assigns the attributes, and creates methods. 
+Description: Iterator. Creates the tasklist class and fills it with tasks from the provided text
+file. Creates methods for adding/removing tasks, return the current task, saving the file,
+and iteration through the file via __next__. 
 '''
-
 
 from task import Task
 
 class Tasklist:
     def __init__(self,tasklist):
+        '''Initializer for the task list. Iterates through the given text file
+        (named tasklist) and saves that as well as an iteration counter and the list as 
+        extracted from the test file. Each line in the text file is used to create a new task for
+        the program.'''
+
         # Reads the list of tasks from the file and stores them by opening the file
         self.tasklist = []
         self.filename = Task
@@ -17,12 +23,15 @@ class Tasklist:
         self.n = 0 
 
         try:
-            with open(tasklist, "r") as file:
+            #Opens the file provided
+            with open(self.list, "r") as file:
                 for line in file:
                     line = line.strip()
+                    #Creation of data for the task by removing all separation between data bits.
                     if line:
-                        desc, date, time = line.split(',')
+                        desc, date, time = line.split(', ')
                         self.tasklist.append(Task(desc, date, time))
+            #Self call to order list
             self.tasklist.sort()
         except FileNotFoundError:
             pass
