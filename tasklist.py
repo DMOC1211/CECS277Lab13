@@ -2,7 +2,7 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 4/29/26
 Group: 17
-Description:
+Description: Creates the tasklist class, assigns the attributes, and creates methods. 
 '''
 
 
