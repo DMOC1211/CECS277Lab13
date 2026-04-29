@@ -19,35 +19,25 @@ def main_menu():
     print("6. Save and quit")
 
     while True:
-        choice = input("Enter choice:").strip()
-        ### check input here
+        choice = check_input.get_int_range("Enter choice: ", 1, 6)
+        return choice
 
 def get_date():
     print("Enter due date:")
+    month = check_input.get_int_range("Enter month: ", 1, 12)
+    day = check_input.get_int_range("Enter day: ", 0, 31)
+    year = check_input.get_int_range("Enter year: ", 2000, 2010)
 
-    while True: 
-        try:
-            month = int(input("Enter month:"))
-            day = int(input("Enter day:"))
-            year = int(input("Enter year:"))
-
-            ###check input
-        except ValueError:
-            print("Invalid input. Try again")
+    return month + "/" + day + "/" + year
 
 
 def get_time():
     print("Enter time:")
 
-    while True:
-        try:
-            hour = int(input("Enter hour:"))
-            minute = int(input("Enter minute:"))
+    hour = check_input.get_int_range("Enter hour: ", 1, 12)
+    minute = check_input.get_int_range("Enter minute: ", 0, 59)
 
-            ##Check input
-
-        except ValueError:
-            print("Invalid input. Try again")
+    return hour + ":" + minute
 
 def main():
     filename = "tasklist.txt"
