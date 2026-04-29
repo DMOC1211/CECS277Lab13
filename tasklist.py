@@ -6,22 +6,22 @@ Description: Creates the tasklist class, assigns the attributes, and creates met
 '''
 
 
-
 from task import Task
 
 class Tasklist:
-    def __init__(self,filename):
+    def __init__(self,tasklist):
         self.tasklist = []
-        self.filename = filename
+        self.filename = Task
+        self.list = tasklist
         self.n = 0 
 
         try:
-            with open(filename, "r") as file:
+            with open(tasklist, "r") as file:
                 for line in file:
                     line = line.strip()
                     if line:
                         desc, date, time = line.split(',')
-                        self.tasklist.append(Task(desc,date,time))
+                        self.tasklist.append(Task(desc, date, time))
             self.tasklist.sort()
         except FileNotFoundError:
             pass
@@ -42,7 +42,7 @@ class Tasklist:
         return self.tasklist.pop(0)
     
     def save_file(self):
-        with open(self.filename, 'w') as file:
+        with open(self.list, 'w') as file:
             for task in self.tasklist:
                 file.write(repr(task)+ '\n')
 
