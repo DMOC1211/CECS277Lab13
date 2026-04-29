@@ -15,12 +15,16 @@ class Task:
         self.time = time #HH:MM
 
     def __str__(self):
+        #Displays the task's information to the user
         return f"{self.description} (Due: {self.date} at {self.time})"
     
     def __repr__(self):
+        #Writes the task to the file
         return f"{self.description}, {self.date}, {self.time}"
     
     def __lt__(self,other):
+        #Compares by year, month, day, hour, minute and then description 
+        #by alphabetical order. (In the order it was written)
         m1, d1, y1 = map(int, self.date.split)
         h1, min1 = map(int, self.time.split(':'))
 
