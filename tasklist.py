@@ -12,7 +12,7 @@ from task import Task
 class Tasklist:
     def __init__(self,filename):
         self.tasklist = []
-        self.filename = Task
+        self.filename = filename
         self.n = 0 
 
         try:
