@@ -2,7 +2,7 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 4/29/26
 Group: 17
-Description:
+Description: 
 '''
 
 
@@ -10,6 +10,7 @@ from tasklist import Tasklist
 import check_input
 
 def main_menu():
+    #Creates the main menu for the user and checks valid inputs
     print("\n-Tasklist")
     print("1. Display Current Task")
     print("2. Display all task")
@@ -23,6 +24,7 @@ def main_menu():
         return choice
 
 def get_date():
+    # Asks the user to enter the month, day and year, and checks validity. 
     print("Enter due date:")
     month = check_input.get_int_range("Enter month: ", 1, 12)
     day = check_input.get_int_range("Enter day: ", 0, 31)
@@ -32,6 +34,7 @@ def get_date():
 
 
 def get_time():
+    # Prompts the user to enter the hour (military time) and minute. And returns the date in HH:MM
     print("Enter time:")
 
     hour = check_input.get_int_range("Enter hour: ", 1, 12)
@@ -40,6 +43,7 @@ def get_time():
     return hour + ":" + minute
 
 def main():
+    #D
     filename = "tasklist.txt"
     tasklist = Tasklist(tasklist.txt)
 
